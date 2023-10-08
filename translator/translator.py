@@ -31,7 +31,7 @@ def traducir_con_mymemory_microsoft_y_google(texto, idioma_entrada, idioma_desti
         # Primera opción: MyMemory
         translator = Translator(from_lang=idioma_entrada, to_lang=idioma_destino)
         traduccion = translator.translate(texto)
-        if traduccion and all(error not in traduccion for error in ["límite de uso", "IS AN INVALID", "TARGET LANGUAGE", "YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY", "INVALID LANGUAGE PAIR SPECIFIED"]):
+        if traduccion and all(error not in traduccion for error in ["límite de uso", "IS AN INVALID", "TOO MANY REQUESTS","TARGET LANGUAGE", "YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY", "INVALID LANGUAGE PAIR SPECIFIED"]):
             logging.info(f'MyMemory realizó la traducción: "{texto}" -> "{traduccion}"')
             return traduccion
     except Exception as e:
