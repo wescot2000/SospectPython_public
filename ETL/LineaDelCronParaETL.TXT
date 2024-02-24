@@ -1,0 +1,2 @@
+0 3 * * * /usr/bin/python3.8 /wwwroot/sospectETL/ETL_to_S3.py >> /tmp/ETL_log.log 2>&1
+0 0 * * * find /tmp/ -name "ETL_log_*.log" -type f -mtime +7 -delete
